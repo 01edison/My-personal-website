@@ -1,0 +1,69 @@
+#home {
+  height: 100vh;
+  width: 100%;
+  background-color: #815b5b;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.intro-heading {
+  text-align: center;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 4px;
+  font-weight: 600;
+  font-size: 5rem;
+  padding-top: 8.5rem;
+  margin-bottom: 3rem;
+}
+.intro-subheading {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 3px;
+}
+
+.intro-btns {
+  width: 40%;
+  margin: 5rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span.developer__text {
+  color: #3c2317;
+  border-bottom: 1px solid black;
+}
+.cv-btn,
+.projects-btn {
+  background-color: #fff8ea;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.cv-btn:hover,
+.projects-btn:hover {
+  color: inherit;
+  background-color: #c98474;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro-heading {
+    padding-top: 5rem;
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .intro-heading {
+    padding-top: 4rem;
+    font-size: 2rem;
+  }
+
+  .intro-btns {
+    width: 80%;
+  }
+}

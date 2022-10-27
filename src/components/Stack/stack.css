@@ -1,0 +1,78 @@
+#stack {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 1.5rem;
+  background-color: #9e7676;
+}
+
+.stack-title {
+  font-family: "Ubuntu", sans-sefif;
+  color: #fdf6ec;
+}
+.stack-subtitle {
+  font-family: "Ubuntu";
+  color: #fdf6ec;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.row-1 > .stack-card {
+  margin: 0 0.5rem;
+  width: 15%;
+}
+
+.row-2 > .stack-card {
+  margin: 0 0.5rem;
+  width: 15%;
+}
+
+.row-1 {
+  margin-bottom: 1rem;
+}
+
+.stack-card {
+  display: inline-block;
+  height: 11rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.stack-img {
+  width: 67%;
+  height: 60%;
+  margin: 1rem auto;
+}
+.stack-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #stack {
+    height: 150vh;
+  }
+  .stack-cards-container {
+    position: relative;
+    left: 3rem;
+  }
+  .stack-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  #stack {
+    height: 220vh;
+    overflow: hidden
+  }
+  .stack-cards-container {
+    position: relative;
+    left: 2rem;
+  }
+  .stack-card{
+    width: 30%;
+    height: 8.5rem;
+    display: inline-block
+  }
+}
