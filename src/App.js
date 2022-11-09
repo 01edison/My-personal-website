@@ -5,14 +5,10 @@ import About from "./components/About/About";
 import Header from "./components/header/Header";
 import Stack from "./components/Stack/Stack";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(0);
-
-  // window.addEventListener("resize", () => {
-  //   setScreenWidth(window.screen.width);
-  // });
-
   useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenWidth(window.screen.width);
@@ -21,11 +17,12 @@ function App() {
   }, [screenWidth]);
   return (
     <div>
-      <Header screenWidth={screenWidth} setScreenWidth={setScreenWidth} />
+      <Header screenWidth={screenWidth} />
       <Intro />
       <About />
-      <Stack screenWidth={screenWidth} setScreenWidth={setScreenWidth} />
+      <Stack screenWidth={screenWidth} />
       <Portfolio />
+      <Contact />
     </div>
   );
 }

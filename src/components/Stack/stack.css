@@ -3,6 +3,7 @@
   width: 100vw;
   padding-top: 1.5rem;
   background-color: #9e7676;
+  overflow:hidden
 }
 
 .stack-title {
@@ -63,7 +64,7 @@
 
 @media screen and (max-width:500px){
   #stack {
-    height: 220vh;
+    height: 250vh;
     overflow: hidden
   }
   .stack-cards-container {
@@ -71,8 +72,24 @@
     left: 2rem;
   }
   .stack-card{
-    width: 30%;
-    height: 8.5rem;
+    width: 32%;
+    height: 9.7rem;
+    display: inline-block
+  }
+}
+
+@media screen and (max-width:375px){
+  #stack {
+    height: 250vh;
+    overflow: hidden
+  }
+  .stack-cards-container {
+    position: relative;
+    left: 1.2rem;
+  }
+  .stack-card{
+    width: 35%;
+    height: 9.15rem;
     display: inline-block
   }
 }

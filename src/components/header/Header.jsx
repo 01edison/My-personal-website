@@ -1,7 +1,7 @@
 import "./header.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Header({ screenWidth, setScreenWidth }) {
+function Header({ screenWidth}) {
   const [yPosition, setYPosition] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -10,59 +10,76 @@ function Header({ screenWidth, setScreenWidth }) {
   });
 
   return (
-    // <nav
-    //   className={`_navbar container-fluid ${yPosition > 10 ? "on-scroll" : ""}`}
-    // >
-    //   <div
-    //     className="navbar-logo"
-    //     style={{ position: "relative", top: "-.3rem" }}
-    //   >
-    //     <span
-    //       onClick={() => window.scrollTo(0, -100000000)}
-    //       className="_navbar-brand"
-    //     >
-    //       Edison {yPosition} {screenWidth}
-    //     </span>
-    //   </div>
-    //   <div className="nav-list" style={{ position: "relative", top: "-.3rem" }}>
-    //     <a
-    //       href="#about"
-    //       className={`nav-link ${
-    //         yPosition > 350 && yPosition < 860 ? "active" : ""
-    //       }`}
-    //     >
-    //       About
-    //     </a>
-    //     <a
-    //       href="#stack"
-    //       className={`nav-link ${
-    //         yPosition > 860 && yPosition < 1700 ? "active" : ""
-    //       }`}
-    //     >
-    //       Stack
-    //     </a>
-    //     <a
-    //       href="#portfolio"
-    //       className={`nav-link ${yPosition > 1700 ? "active" : ""}`}
-    //     >
-    //       Portfolio
-    //     </a>
-    //     <a href="#contact" className="nav-link">
-    //       Contact
-    //     </a>
-    //   </div>
-    // </nav>
+    <div
+      class={`topnav ${isClicked ? "responsive" : ""} ${
+        yPosition > 10 ? "onscroll" : ""
+      }`}
+      id="myTopnav"
+    >
+      <a href="#home">Edison</a>
 
-    <div class={`topnav ${isClicked ? "responsive" : ""}`} id="myTopnav">
-      <a href="#home" class="active">
-        Home
+      <a
+        href="#about"
+        class={`${yPosition > 350 && yPosition < 860 ? "active" : ""}`}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        About
       </a>
-      <a href="#about">About</a>
-      <a href="#stack">Stack</a>
-      <a href="#portfolio">Portfolio</a>
+      <a
+        href="#stack"
+        class={`${yPosition > 860 && yPosition < 1700 ? "active" : ""}`}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        Stack
+      </a>
+      <a
+        href="#portfolio"
+        class={`${yPosition > 1700 && yPosition < 2500 ? "active" : ""}`}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        Portfolio
+      </a>
+      <a
+        href="#contact"
+        class={`${yPosition > 2500 ? "active" : ""}`}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        Contact
+      </a>
+
       <a class="icon" onClick={() => setIsClicked(!isClicked)}>
         <i class="fa fa-bars"></i>
       </a>
+      {screenWidth > 425 ? (
+        <>
+          <a
+            className="contact-icon"
+            href="https://www.linkedin.com/in/chimdindu-mgbeokwere-091694222/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            className="contact-icon"
+            href="https://www.instagram.com/edison.jsx"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            className="contact-icon"
+            href="https://github.com/01edison"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

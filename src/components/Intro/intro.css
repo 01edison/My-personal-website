@@ -67,3 +67,12 @@ span.developer__text {
     width: 80%;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .intro-btns{
+    width:90%
+  }
+  .cv-btn, .projects-btn{
+    padding:.35rem
+  }
+}
