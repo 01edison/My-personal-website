@@ -20,3 +20,14 @@ a {
 button {
   cursor: pointer;
 }
+
+.alert {
+  position: fixed;
+  right: -20rem;
+  top: 4rem;
+  transition: all 0.5s;
+}
+
+.alert.show {
+  right: 1rem;
+}

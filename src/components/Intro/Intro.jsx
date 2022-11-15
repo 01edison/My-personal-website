@@ -10,7 +10,7 @@ const Intro = () => {
           WEB && BLOCKCHAIN <span className="developer__text">DEVELOPER.</span>
         </h4>
         <div className="intro-btns">
-          <button className="cv-btn">Download CV</button>
+          <button className="cv-btn">Download Resumé</button>
           <a className="projects-btn" href="#portfolio">
             View My Projects
           </a>

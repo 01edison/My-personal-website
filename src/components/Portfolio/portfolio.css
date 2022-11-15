@@ -87,4 +87,13 @@
 }
 
 @media screen and (max-width: 500px) {
+  .projects-container {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-body {
+    width: 17.5rem;
+  }
 }

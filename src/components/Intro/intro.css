@@ -42,6 +42,7 @@ span.developer__text {
   padding: 0.75rem;
   border-radius: 10px;
   font-weight: 500;
+  font-family: "Poppins", sans-serif;
   transition: 0.3s;
 }
 .cv-btn:hover,
@@ -68,11 +69,15 @@ span.developer__text {
   }
 }
 
-@media screen and (max-width: 320px) {
-  .intro-btns{
-    width:90%
+@media screen and (max-width: 425px) {
+  .intro-btns {
+    width: 70%;
+    font-size: 0.75rem;
   }
-  .cv-btn, .projects-btn{
-    padding:.35rem
+}
+
+@media screen and (max-width: 375px) {
+  .intro-btns {
+    width: 80%;
   }
 }

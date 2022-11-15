@@ -1,7 +1,7 @@
 import "./header.css";
 import { useState } from "react";
 
-function Header({ screenWidth}) {
+function Header({ screenWidth }) {
   const [yPosition, setYPosition] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -11,44 +11,43 @@ function Header({ screenWidth}) {
 
   return (
     <div
-      class={`topnav ${isClicked ? "responsive" : ""} ${
-        yPosition > 10 ? "onscroll" : ""
-      }`}
+      className={`topnav ${isClicked ? "responsive" : ""} `}
+      style={{ backgroundColor: "#594545" }}
       id="myTopnav"
     >
       <a href="#home">Edison</a>
 
       <a
         href="#about"
-        class={`${yPosition > 350 && yPosition < 860 ? "active" : ""}`}
+        className={`${yPosition > 350 && yPosition < 860 ? "active" : ""}`}
         onClick={() => setIsClicked(!isClicked)}
       >
         About
       </a>
       <a
         href="#stack"
-        class={`${yPosition > 860 && yPosition < 1700 ? "active" : ""}`}
+        className={`${yPosition > 860 && yPosition < 1700 ? "active" : ""}`}
         onClick={() => setIsClicked(!isClicked)}
       >
         Stack
       </a>
       <a
         href="#portfolio"
-        class={`${yPosition > 1700 && yPosition < 2500 ? "active" : ""}`}
+        className={`${yPosition > 1700 && yPosition < 2500 ? "active" : ""}`}
         onClick={() => setIsClicked(!isClicked)}
       >
         Portfolio
       </a>
       <a
         href="#contact"
-        class={`${yPosition > 2500 ? "active" : ""}`}
+        className={`${yPosition > 2500 ? "active" : ""}`}
         onClick={() => setIsClicked(!isClicked)}
       >
         Contact
       </a>
 
-      <a class="icon" onClick={() => setIsClicked(!isClicked)}>
-        <i class="fa fa-bars"></i>
+      <a className="icon" onClick={() => setIsClicked(!isClicked)}>
+        <i className={isClicked ? "fa-solid fa-xmark" : "fa fa-bars"}></i>
       </a>
       {screenWidth > 425 ? (
         <>
@@ -58,7 +57,7 @@ function Header({ screenWidth}) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa-brands fa-linkedin"></i>
+            <i className="fa-brands fa-linkedin"></i>
           </a>
           <a
             className="contact-icon"
@@ -66,7 +65,7 @@ function Header({ screenWidth}) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa-brands fa-instagram"></i>
+            <i className="fa-brands fa-instagram"></i>
           </a>
           <a
             className="contact-icon"
@@ -74,7 +73,7 @@ function Header({ screenWidth}) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa-brands fa-github"></i>
+            <i className="fa-brands fa-github"></i>
           </a>
         </>
       ) : (

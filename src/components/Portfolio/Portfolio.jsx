@@ -77,9 +77,10 @@ const Portfolio = () => {
         </button>
       </div>
       <div className="projects-container container">
-        {activeProjects.map((project) => {
+        {activeProjects.map((project, i) => {
           return (
             <Project
+              key={i}
               name={project.name}
               description={project.description}
               img={project.img}

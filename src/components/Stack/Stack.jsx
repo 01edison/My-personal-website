@@ -1,9 +1,9 @@
 import React from "react";
 import StackCard from "../misc/StackCard";
+import { stack } from "./tech-stack";
 import "./stack.css";
 
-const Stack = ({screenWidth}) => {
-  
+const Stack = ({ screenWidth }) => {
   return (
     <div id="stack">
       <section className="tech-stack-section container">
@@ -14,66 +14,14 @@ const Stack = ({screenWidth}) => {
         <div className="stack-cards-container">
           {screenWidth <= 1024 ? (
             <div className="row">
-              <StackCard
-                img={"/img/stack-imgs/html.png"}
-                text={"HTML5"}
-                col={"col-lg-2 col-md-2 col-sm-3 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/css.png"}
-                text={"CSS3"}
-                col={"col-lg-2 col-md-2 col-sm-3 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/React-icon.png"}
-                text={"REACT.js"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/bootstrap.jpg"}
-                text={"BOOTSTRAP"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/nodejs.png"}
-                text={"NODE.js"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/express.png"}
-                text={"EXPRESS.js"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/nextjs.png"}
-                text={"NEXT.js"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/mongodb.png"}
-                text={"MONGODB"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/solidity.png"}
-                text={"SOLIDITY"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/moralis.jpg"}
-                text={"MORALIS"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/hardhat.png"}
-                text={"HARDHAT"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
-              <StackCard
-                img={"/img/stack-imgs/ethers.png"}
-                text={"ETHERS.js"}
-                col={"col-lg-2 col-md-2 mx-4"}
-              />
+              {stack.map((s, i) => (
+                <StackCard
+                  key={i}
+                  img={s.img}
+                  text={s.text}
+                  col={"col-lg-2 col-md-2 col-sm-3 mx-4"}
+                />
+              ))}
             </div>
           ) : (
             <>

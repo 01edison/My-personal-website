@@ -15,12 +15,12 @@ const Project = ({ name, description, liveDemo, gitRepo, img }) => {
         <div className="project-links d-flex flex-column">
           {gitRepo && (
             <a href={gitRepo} target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github mb-2"></i>
+              <i className="fa-brands fa-github mb-2"></i>
             </a>
           )}
           {liveDemo && (
             <a href={liveDemo} target="_blank" rel="noreferrer">
-              <i class="fa-solid fa-link"></i>
+              <i className="fa-solid fa-link"></i>
             </a>
           )}
         </div>
