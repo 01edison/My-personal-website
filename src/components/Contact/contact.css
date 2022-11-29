@@ -15,12 +15,6 @@
   position: relative;
   top: 12rem;
 }
-.section-heading-line {
-  width: 12rem;
-  height: 0.2rem;
-  background-color: #ddd;
-  margin: 0 2.5rem;
-}
 .contact-wrapper {
   width: 50%;
   display: flex;
@@ -69,12 +63,12 @@
 .contact-form input,
 .contact-form textarea {
   padding: 0.5rem;
-  background-color: #59454530;
-  color: #eee;
+  background-color: #59454590;
+  color: #000;
   border: none;
   margin-bottom: 1rem;
   font-family: "Oswald" sans-serif;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 }
 .inTouch {
   text-align: center;
@@ -86,8 +80,7 @@
   min-height: 2.44rem;
   overflow: hidden;
 }
-.contact-form input[type="submit"] {
-  background-color: #7a1010;
+.contact-form button {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.5s;
@@ -149,6 +142,7 @@
     color: #594545;
   }
   .contact-form input,
+  .contact-form button,
   .contact-form textarea {
     width: 90vw;
   }

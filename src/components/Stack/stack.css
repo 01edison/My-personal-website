@@ -80,16 +80,21 @@
 
 @media screen and (max-width:375px){
   #stack {
-    height: 250vh;
+    height: 200vh;
     overflow: hidden
   }
   .stack-cards-container {
     position: relative;
-    left: 1.2rem;
+    left: .7rem;
+  }
+  .stack-img{
+    width: 67%;
+    height: 47%;
+    margin: 1rem auto;
   }
   .stack-card{
-    width: 35%;
-    height: 9.15rem;
+    width: 34%;
+    height: 7.5rem;
     display: inline-block
   }
 }

@@ -16,7 +16,10 @@ const About = () => {
               applications. I have a strong passion for learning new
               technologies and I am always looking to improve my skills.
             </p>
-            <button className="cv-btn">Download Resumé</button>
+            <div>
+              
+            </div>
+            <a className="cv-btn" href="/assets/Resume.pdf" target="_blank">Download Resumé</a>
           </div>
         </div>
       </section>

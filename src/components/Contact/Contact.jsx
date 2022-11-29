@@ -1,11 +1,15 @@
 import React, { useRef, useState } from "react";
-
+import { SyncOutlined } from "@ant-design/icons";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
-const Contact = ({ setShowAlert }) => {
+const Contact = ({ setShowAlert, setMsg }) => {
   const form = useRef();
   const [sending, setSending] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [contact, setContact] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -18,15 +22,22 @@ const Contact = ({ setShowAlert }) => {
         "Qs6w4BPUqg7oDDv-f"
       );
       console.log(res);
+      setMsg("success");
     } catch (error) {
       console.log(error);
+      setMsg("error");
     }
     setSending(false);
-
+    setContact({ from_email: "", from_name: "", message: "" });
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
     }, 3000);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContact({ ...contact, [name]: value });
   };
   return (
     <div id="contact" className="container-fluid">
@@ -52,23 +63,42 @@ const Contact = ({ setShowAlert }) => {
               <h1>Get in Touch</h1>
 
               <form ref={form} className="contact-form" onSubmit={sendEmail}>
-                <input type="text" placeholder="Your Name" name="from_name" />
                 <input
+                  type="text"
+                  placeholder="Your Name"
+                  name="from_name"
+                  onChange={handleChange}
+                  value={contact.from_name}
+                  required
+                />
+                <input
+                  onChange={handleChange}
                   type="email"
                   placeholder="Your Email"
                   name="from_email"
+                  value={contact.from_email}
+                  required
                 />
                 <textarea
+                  onChange={handleChange}
                   name="message"
                   id=""
                   placeholder="Your Message"
+                  value={contact.message}
+                  required
                 ></textarea>
-                <input
+                <button
                   type="submit"
-                  value={sending ? "sending...." : "Send Message"}
-                  disabled={sending}
-                  style={{ opacity: sending ? 0.3 : "" }}
-                />
+                  className="btn btn-danger"
+                  disabled={
+                    sending ||
+                    !contact.from_email ||
+                    !contact.from_name ||
+                    !contact.message
+                  }
+                >
+                  {sending ? <SyncOutlined spin /> : "Submit"}
+                </button>
               </form>
             </div>
           </div>

@@ -11,6 +11,8 @@ import Contact from "./components/Contact/Contact";
 function App() {
   const [screenWidth, setScreenWidth] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
+  const [msg, setMsg] = useState("");
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenWidth(window.screen.width);
@@ -24,9 +26,13 @@ function App() {
       <About />
       <Stack screenWidth={screenWidth} />
       <Portfolio />
-      <Contact setShowAlert={setShowAlert} />
+      <Contact setShowAlert={setShowAlert} setMsg={setMsg} />
       <div className={`alert ${showAlert ? "show" : ""}`}>
-        <Alert>Email sent successfully</Alert>
+        <Alert severity={msg == "success" ? "success" : "error"}>
+          {msg == "success"
+            ? "Email Sent Successfully"
+            : "Oops! Something went wrong"}
+        </Alert>
       </div>
     </div>
   );
